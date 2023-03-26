@@ -1,20 +1,27 @@
 // Packages and Modules needed
 const inquirer = require('inquirer');
 const fs = require('fs');
-// const shapes = require('./lib/shapes.js');
-const selectedShape = require('./lib/shapes.js');
+const selectedShape = require('./lib/shapes.js')
+const MaxLengthInputPrompt = require('inquirer-maxlength-input-prompt')
+const chalkPipe = require('chalk-pipe')
+inquirer.registerPrompt('maxlength-input', MaxLengthInputPrompt)
 
 // Array of questions for user input
 const questions = [
     {
-        type: 'input',
+        type: 'maxlength-input',
         name: 'text',
-        message: "Please enter the text in the logo (Max 3 characters)."
+        message: "Please enter the text in the logo (Max 3 characters).",
+        maxLength: 3,
+        
     },
     {
         type: 'input',
         name: 'textColor',
-        message: "Enter desired text color (keyword or hexadecimal number)."
+        message: "Enter desired text color (text or # hexadecimal number).",
+        transformer: function(color) {
+            return chalkPipe(color)(color)
+        }
     },
     {
         type: 'list',
@@ -25,15 +32,18 @@ const questions = [
     {
         type: 'input',
         name: 'shapeColor',
-        message: "Enter desired shape color (keyword or hexadecimal number)."
+        message: "Enter desired shape color (text or # hexadecimal number).",
+        transformer: function(color) {
+            return chalkPipe(color)(color)
+        }
     },
 ];
 
-// Write SVG file
+// Write SVG file (HTML for now)
 function writeToFile(filename, data) {
-    console.log('34', data)
-    fs.writeFile('logo.html', selectedShape(data), (err) =>
-    err ? console.error(err) : console.log(`Success!`) 
+    console.log(data)
+    fs.writeFile(`logo.svg`, selectedShape(data), (err) =>
+    err ? console.error(err) : console.log(`Generated logo.svg`) 
     )
 }
 
@@ -41,7 +51,7 @@ function writeToFile(filename, data) {
 function init() {
     inquirer
     .prompt(questions)
-    .then((response) => writeToFile('logo.html', response))
+    .then((response) => writeToFile('logo.svg', response))
 }
 
 // Start app
