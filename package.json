@@ -22,5 +22,6 @@
   "homepage": "https://github.com/Anabel-Espinoza/Logo-Maker#readme",
   "dependencies": {
     "inquirer": "^8.2.4"
-  }
+  },
+  "devDependencies": {}
 }

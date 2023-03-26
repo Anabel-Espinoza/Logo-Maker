@@ -1,9 +1,8 @@
 // Packages and Modules needed
-// const generateMarkdown = require('./utils/generateMarkdown.js')
 const inquirer = require('inquirer');
 const fs = require('fs');
-const shapes = require('./lib/shapes.js');
-const tryStudy = require('./lib/shapes.js');
+// const shapes = require('./lib/shapes.js');
+const selectedShape = require('./lib/shapes.js');
 
 // Array of questions for user input
 const questions = [
@@ -15,7 +14,7 @@ const questions = [
     {
         type: 'input',
         name: 'textColor',
-        message: "Enter desired text color (keyword or dexadecimal number)."
+        message: "Enter desired text color (keyword or hexadecimal number)."
     },
     {
         type: 'list',
@@ -26,23 +25,23 @@ const questions = [
     {
         type: 'input',
         name: 'shapeColor',
-        message: "Enter desired shape color (keyword or dexadecimal number)."
+        message: "Enter desired shape color (keyword or hexadecimal number)."
     },
 ];
 
 // Write SVG file
-// function writeToFile(fileName, data) {
-//     console.log(data)
-//     fs.writeFile('logo.svg', tryStudy.shapes(data), (err) =>
-//     err ? console.error(err) : console.log(`Success!`) 
-//     )
-// }
+function writeToFile(filename, data) {
+    console.log('34', data)
+    fs.writeFile('logo.html', selectedShape(data), (err) =>
+    err ? console.error(err) : console.log(`Success!`) 
+    )
+}
 
 // Initialize app
 function init() {
     inquirer
     .prompt(questions)
-    .then((response) => tryStudy.shapes(response))
+    .then((response) => writeToFile('logo.html', response))
 }
 
 // Start app
