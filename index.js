@@ -1,7 +1,7 @@
 // Packages and Modules needed
 const inquirer = require('inquirer');
 const fs = require('fs');
-const selectedShape = require('./lib/shapes.js')
+const {selectedShape} = require('./lib/shapes.js')
 const MaxLengthInputPrompt = require('inquirer-maxlength-input-prompt')
 const chalkPipe = require('chalk-pipe')
 inquirer.registerPrompt('maxlength-input', MaxLengthInputPrompt)
