@@ -23,7 +23,7 @@ Clone the repository. From the terminal: npm i.
 
 To start the application, the user must enter "node index.js". A series of questions will be prompted. User must enter the text in the logo (allows up to 3 characters), text and shape color (can enter word or "#" + hexadecimal color code), and the shape from a list: square, circle, triangle. After the last question has been answered, a message will appear in the terminal, letting the user know the svg file has been created.
 
-**Video of the application functionality:** link here
+**Video of the application functionality:** https://drive.google.com/file/d/1M0MKwT0WJgO0lu-sQN4APwQTuMFRU73F/view
 
 ## Tests
 
@@ -39,7 +39,7 @@ From the terminal: npm run test.
 
 - Created by: Anabel Espinoza (https://github.com/Anabel-Espinoza).
 
-- Supported by: Jose Vinnie Lopez (GA Tech Tutor). 
+- Supported by: Jose Vinnie Lopez (GA Tech Bootcamp Tutor). 
 
 ## License
 
