@@ -5,7 +5,7 @@
 
 ## Description
 
-This application creates svg logos according to the user inputs: shape, shape color, text, and text color. This tool helps the user to easily make simple images. Examples of logos created with this app can be found in the 'examples' folder in the repository.
+This application creates svg logos according to the user inputs: shape, shape color, text, and text color. Examples of logos created with this app can be found in the 'examples' folder in the repository.
 
 ## Table of Contents
 
@@ -21,7 +21,7 @@ Clone the repository. From the terminal: npm i.
 
 ## Usage
 
-To start the application, the user must enter "npm index". A series of questions will be prompted. User must enter the text in the logo (allows up to 3 characters), text and shape color (can enter word or "#" + hexadecimal color code), and the shape from a list: square, circle, triangle. After the last question has been answered, a message will appear in the terminal, letting the user know the svg file has been created.
+To start the application, the user must enter "node index.js". A series of questions will be prompted. User must enter the text in the logo (allows up to 3 characters), text and shape color (can enter word or "#" + hexadecimal color code), and the shape from a list: square, circle, triangle. After the last question has been answered, a message will appear in the terminal, letting the user know the svg file has been created.
 
 **Video of the application functionality:** link here
 
@@ -31,16 +31,15 @@ From the terminal: npm run test.
 
 ## Credits
 
-SGV basic code from:
-https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorial/Getting_Started
+- SGV Getting Started: https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorial/Getting_Started
 
-inquirer-maxlength-input-prompt
-https://www.npmjs.com/package/inquirer-maxlength-input-prompt
+- inquirer-maxlength-input-prompt: https://www.npmjs.com/package/inquirer-maxlength-input-prompt
 
-inquirer-chalk-pipe
-https://github.com/LitoMore/inquirer-chalk-pipe
+- inquirer-chalk-pipe: https://github.com/LitoMore/inquirer-chalk-pipe
 
-Created by: Anabel Espinoza (https://github.com/Anabel-Espinoza)
+- Created by: Anabel Espinoza (https://github.com/Anabel-Espinoza).
+
+- Supported by: Jose Vinnie Lopez (GA Tech Tutor). 
 
 ## License
 

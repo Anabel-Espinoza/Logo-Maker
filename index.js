@@ -58,10 +58,10 @@ function init() {
                     break;
             }
 
-            userChoiceShape.setColor(response.shapeColor)
-
+            const {shape, shapeColor, text, textColor} = response
+            userChoiceShape.setColor(shapeColor)
             const svg = new SVG()
-            svg.textNode(response.text, response.textColor)
+            svg.textNode(text, textColor)
             svg.shape(userChoiceShape)
             return fs.writeFile(`logo.svg`, svg.render(), (err) =>
             err ? console.error(err) : console.log(`Generated logo.svg`)
